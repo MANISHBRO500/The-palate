@@ -13,7 +13,7 @@ document.getElementById('bookingForm').addEventListener('submit', async (e) => {
       status: 'Pending'
     };
   
-    const res = await fetch('/api/bookings', {
+    const res = await fetch('https://the-palate.onrender.com/api/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
