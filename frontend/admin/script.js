@@ -1,5 +1,5 @@
 async function fetchBookings() {
-    const res = await fetch('/api/bookings');
+    const res = await fetch('https://the-palate.onrender.com/api/bookings');
     const bookings = await res.json();
     const container = document.getElementById('bookings');
   
@@ -19,7 +19,7 @@ async function fetchBookings() {
   }
   
   async function updateStatus(id, status) {
-    await fetch(`/api/bookings/${id}`, {
+    await fetch(`https://the-palate.onrender.com/api/bookings/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
