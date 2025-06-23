@@ -10,21 +10,25 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// ✅ FIX: Allow GitHub Pages domain to access backend
+app.use(cors({
+  origin: ['https://manishbro500.github.io'],
+  methods: ['GET', 'POST', 'PATCH'],
+}));
+
 app.use(express.json());
 
 app.use('/api/bookings', bookingRoutes);
 
-// Static file serving
+// Serve frontend pages (optional if hosting frontend separately)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 app.use('/customer', express.static(path.join(__dirname, '../frontend/customer')));
 app.use('/admin', express.static(path.join(__dirname, '../frontend/admin')));
 
-// Default route
 app.get('/', (req, res) => {
-  res.send('Table Booking System API is running...');
+  res.send('Table Booking API is live');
 });
 
 const PORT = process.env.PORT || 5000;
