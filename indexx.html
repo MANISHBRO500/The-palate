@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Palate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+    }
+    body {
+      background: #fffaf5;
+      color: #333;
+    }
+    header {
+      background: url('2023-01-17.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+    }
+    header h1 {
+      font-size: 4em;
+      font-family: 'Playfair Display', serif;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f0c674;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2.5em;
+      color: #b85c38;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    section p {
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: #222;
+      color: #f0c674;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      nav {
+        top: 10px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <h1>The Palate</h1>
+    <p>A Symphony of Flavors</p>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to The Palate</h2>
+    <p>Step into a world where food meets art. Our dishes are crafted with precision, inspired by flavors across the globe, and served with a touch of elegance. Whether you're here for a quick bite or a romantic dinner, The Palate is where your culinary journey begins.</p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1600891963933-9687f3b6aa7f" alt="Dish 1" />
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Dish 2" />
+      <img src="https://images.unsplash.com/photo-1541544181051-204be1f3a3ec" alt="Dish 3" />
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>The Palate is more than a restaurant — it's a sensory experience. Our chefs blend traditional techniques with modern creativity to serve up unforgettable meals. Located in the heart of the city, we bring warmth, flavor, and joy to your table. Come taste the magic where food and art unite.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Want to reserve a table or inquire about our specials? Reach out to us below:</p>
+    <p>Email: hello@thepalate.com<br>Phone: +91 98765 43210<br>Address: 123 Flavor Street, Food City</p>
+  </section>
+
+  <footer>
+    "At The Palate, every bite feels like a melody, every dish tells a story, and every moment feels like heaven. Come for the food, stay for the soul — because the body is yours, but the flavor is ours."
+  </footer>
+</body>
+</html>
