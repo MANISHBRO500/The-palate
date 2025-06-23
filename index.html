@@ -150,16 +150,28 @@
   </footer>
 
   <script>
-    const slider = document.querySelector('.slider');
-    const images = slider.querySelectorAll('img');
-    let currentIndex = 0;
+  const slider = document.querySelector('.slider');
+  const images = slider.querySelectorAll('img');
+  const totalImages = images.length;
+  let currentIndex = 0;
 
-    function slideImages() {
-      currentIndex = (currentIndex + 1) % images.length;
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  function slideImages() {
+    currentIndex++;
+    slider.style.transition = "transform 0.6s ease-in-out";
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    if (currentIndex === totalImages - 1) {
+      // Wait for the transition to end, then jump to the first image without animation
+      setTimeout(() => {
+        slider.style.transition = "none";
+        slider.style.transform = `translateX(0)`;
+        currentIndex = 0;
+      }, 600); // match transition duration
     }
+  }
 
-    setInterval(slideImages, 5000); // Move every 5 seconds
-  </script>
+  setInterval(slideImages, 5000); // every 5 seconds
+</script>
+
 </body>
 </html>
