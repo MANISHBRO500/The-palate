@@ -25,6 +25,7 @@
       align-items: center;
       color: white;
       text-shadow: 2px 2px 5px black;
+      position: relative;
     }
     header h1 {
       font-size: 4em;
@@ -61,19 +62,28 @@
       font-size: 1.1em;
       line-height: 1.8;
     }
+
+    /* Slider */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+      overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-top: 30px;
     }
+
+    .slider {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
     footer {
       background: #222;
       color: #f0c674;
@@ -108,10 +118,13 @@
   <section id="home">
     <h2>Welcome to The Palate</h2>
     <p>Step into a world where food meets art. Our dishes are crafted with precision, inspired by flavors across the globe, and served with a touch of elegance. Whether you're here for a quick bite or a romantic dinner, The Palate is where your culinary journey begins.</p>
+
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1600891963933-9687f3b6aa7f" alt="Dish 1" />
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Dish 2" />
-      <img src="https://images.unsplash.com/photo-1541544181051-204be1f3a3ec" alt="Dish 3" />
+      <div class="slider">
+        <img src="https://images.unsplash.com/photo-1600891963933-9687f3b6aa7f" alt="Dish 1" />
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Dish 2" />
+        <img src="https://images.unsplash.com/photo-1541544181051-204be1f3a3ec" alt="Dish 3" />
+      </div>
     </div>
   </section>
 
@@ -129,5 +142,18 @@
   <footer>
     "At The Palate, every bite feels like a melody, every dish tells a story, and every moment feels like heaven. Come for the food, stay for the soul — because the body is yours, but the flavor is ours."
   </footer>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    const images = slider.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function slideImages() {
+      currentIndex = (currentIndex + 1) % images.length;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(slideImages, 5000); // Move every 5 seconds
+  </script>
 </body>
 </html>
