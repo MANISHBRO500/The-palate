@@ -64,17 +64,17 @@
     }
 
     /* Slider */
-    .gallery {
+   .gallery {
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   margin-top: 40px;
-  height: 500px; /* Increased height */
+  height: 500px;
+  position: relative;
 }
 
 .slider {
   display: flex;
-  width: 300%;
   height: 100%;
   transition: transform 0.6s ease-in-out;
 }
@@ -85,6 +85,7 @@
   object-fit: cover;
   flex-shrink: 0;
 }
+
 
 
     footer {
@@ -122,13 +123,15 @@
     <h2>Welcome to The Palate</h2>
     <p>Step into a world where food meets art. Our dishes are crafted with precision, inspired by flavors across the globe, and served with a touch of elegance. Whether you're here for a quick bite or a romantic dinner, The Palate is where your culinary journey begins.</p>
 
-    <div class="gallery">
-      <div class="slider">
-        <img src="https://images.unsplash.com/photo-1600891963933-9687f3b6aa7f" alt="Dish 1" />
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Dish 2" />
-        <img src="https://images.unsplash.com/photo-1541544181051-204be1f3a3ec" alt="Dish 3" />
-      </div>
-    </div>
+    <<div class="gallery">
+  <div class="slider">
+    <img src="https://images.unsplash.com/photo-1600891963933-9687f3b6aa7f" alt="Dish 1" />
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Dish 2" />
+    <img src="https://images.unsplash.com/photo-1541544181051-204be1f3a3ec" alt="Dish 3" />
+    <img src="https://images.unsplash.com/photo-1600891963933-9687f3b6aa7f" alt="Dish 1 clone" /> <!-- clone of 1st -->
+  </div>
+</div>
+
   </section>
 
   <section id="about">
