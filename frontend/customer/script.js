@@ -4,6 +4,7 @@ document.getElementById('bookingForm').addEventListener('submit', async (e) => {
     const data = {
       name: form.name.value,
       email: form.email.value,
+       phone: form.phone.value,
       event: form.event.value,
       date: form.date.value,
       day: form.day.value,
