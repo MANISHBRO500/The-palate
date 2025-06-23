@@ -14,9 +14,8 @@ const app = express();
 // ✅ FIX: Allow GitHub Pages domain to access backend
 app.use(cors({
   origin: ['https://manishbro500.github.io'],
-  methods: ['GET', 'POST', 'PATCH'],
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'], 
 }));
-
 app.use(express.json());
 
 app.use('/api/bookings', bookingRoutes);
