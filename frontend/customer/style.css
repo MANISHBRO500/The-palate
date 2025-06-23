@@ -1,22 +1,39 @@
 body {
-    font-family: Arial;
-    background: #fff8f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  font-family: Arial;
+  background: #fff8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px; /* Add padding for smaller screens */
+  box-sizing: border-box;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ccc;
+  width: 100%;
+  max-width: 400px; /* Prevents form from getting too wide */
+  box-sizing: border-box;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive design for smaller phones */
+@media (max-width: 480px) {
   .form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
   }
-  
+
   input, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    font-size: 16px;
   }
-  
+}
